@@ -1,9 +1,14 @@
+import './TodoItem.css'
+
 function TodoItem(props) {
   return (
     <li>
-        <span>V</span>
-        <p>{props.text}</p>
-        <span>X</span>
+        <div className='div-lista'>
+          {/* <input type='checkbox'/> */}
+          <span className={`${props.completed ? "completed-todo-icon" : "no-completed-todo-icon"}`}>V</span>
+          <p className={`${props.completed && "completed-todo"}`}>{props.text}</p>
+        </div>
+        <span className='eliminar'>X</span>
     </li>
   )
 }

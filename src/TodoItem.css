@@ -1,0 +1,44 @@
+li {
+  border: 3px solid rgb(122, 124, 245);
+  border-radius: 10px;
+  width: calc(100% - 52px);
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* overflow: hidden */
+  font-size: 18px;
+  color:rgb(41, 41, 41)
+}
+.eliminar{
+  padding-right: 20px;
+  color: rgb(238, 30, 30);
+  font-weight: bold;
+  cursor: pointer;
+}
+.div-lista{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:20px
+}
+.div-lista span{
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.no-completed-todo-icon{
+  color: gray;
+}
+.div-lista span:hover {
+  color:green
+}
+/* .no-completed-todo{
+  text-decoration: none;
+} */
+.completed-todo{
+  text-decoration: line-through;
+}
+.completed-todo-icon{
+  color: green;
+}

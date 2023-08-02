@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 450px;
+  height: 580px;
+  margin: auto ;
+  margin-top: 10px;
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-mancha-acuarela-color-pastel_52683-12283.jpg?w=2000');
+  background-size: cover; /* Ajustar la imagen para cubrir todo el fondo */
+  background-position: center; /* Centrar la imagen en el fondo */
+  border: 7px solid rgb(122, 124, 245);
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #9571eb , 0 0 80px #ff00de  ;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@media screen and (max-width:600px) {
+  body{
+    width: 80%;
+  }
 }

@@ -1,0 +1,8 @@
+h1{
+    width: 80%;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    margin-bottom:15px ;
+    color:rgb(82, 85, 248);
+}

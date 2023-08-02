@@ -4,6 +4,7 @@ import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
+import { CreateTodoButton } from "./CreateTodoButton";
 
 const defaultTodos = [
   {
@@ -30,6 +31,7 @@ function App() {
           <TodoItem key={el.text} text={el.text} completed={el.completed} />
         ))}
       </TodoList>
+      <CreateTodoButton />
     </React.Fragment>
   );
 }

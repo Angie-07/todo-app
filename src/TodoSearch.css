@@ -1,0 +1,18 @@
+.div-input{
+    width: 100%;
+}
+
+input{
+    height:35px;
+    width:calc(100% - 62px);
+    /* margin:0 24px; */
+    padding: 0 0 0 15px;
+    font-size: 16px;
+    border-radius: 7px;
+    border: none;
+
+}
+input:focus{
+    outline: none;
+    border: 2px solid rgb(122, 124, 245);
+}
