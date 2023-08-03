@@ -2,7 +2,7 @@ import './TodoItem.css'
 
 function TodoItem(props) {
   return (
-    <li>
+    <li className='todo-item'>
         <div className='div-lista'>
           {/* <input type='checkbox'/> */}
           <span className={`${props.completed ? "completed-todo-icon" : "no-completed-todo-icon"}`}>V</span>

@@ -22,10 +22,17 @@ const defaultTodos = [
 ];
 
 function App() {
+  //creamos un estado para el buscador
+  const [searchValue, setSearchValue] = React.useState("");
+  const [todos, setTodos] = React.useState(defaultTodos);
+
+  const todoCompleted = todos.filter((el) => el.completed).length;
+  const total = todos.length;
+
   return (
     <React.Fragment>
-      <TodoCounter todoCompleted={12} total={20} />
-      <TodoSearch />
+      <TodoCounter todoCompleted={todoCompleted} total={total} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TodoList>
         {defaultTodos.map((el) => (
           <TodoItem key={el.text} text={el.text} completed={el.completed} />

@@ -1,4 +1,4 @@
-button{
+.create-todo-button{
     height:45px;
     width:calc(100% - 42px);
     border-radius: 7px;
