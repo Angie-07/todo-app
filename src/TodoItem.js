@@ -1,21 +1,20 @@
-import './TodoItem.css'
+import "./TodoItem.css";
+import { CompleteIcon } from "./CompleteIcon";
+import { DeleteIcon } from "./DeleteIcon";
 
 function TodoItem(props) {
-  
-  const fun = (event) =>{
-    console.log(event);
-  }
-  
   return (
-    <li className='todo-item'>
-        <div className='div-lista'>
-          {/* <input type='checkbox'/> */}
-          <span className={`${props.completed ? "completed-todo-icon" : "no-completed-todo-icon"}`} onClick={props.completeTodo}>V</span>
-          <p className={`${props.completed && "completed-todo"}`}>{props.text}</p>
-        </div>
-        <span className='delete' onClick={props.deleteTodo}>X</span>
+    <li className="todo-item">
+      <div className="div-lista">
+        <CompleteIcon
+          completed={props.completed}
+          completeTodo={props.completeTodo}
+        />
+        <p className={`${props.completed && "completed-todo"}`}>{props.text}</p>
+      </div>
+      <DeleteIcon deleteTodo={props.deleteTodo} />
     </li>
-  )
+  );
 }
 
-export {TodoItem}
+export { TodoItem };

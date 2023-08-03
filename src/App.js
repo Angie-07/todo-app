@@ -8,7 +8,7 @@ import { CreateTodoButton } from "./CreateTodoButton";
 
 const defaultTodos = [
   {
-    text: "Go to the supermarket",
+    text: "Learn react to develop",
     completed: true,
   },
   {
