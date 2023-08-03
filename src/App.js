@@ -28,13 +28,14 @@ function App() {
 
   const todoCompleted = todos.filter((el) => el.completed).length;
   const total = todos.length;
+  const searchedTodos = todos.filter(el=>el.text.toLowerCase().includes(searchValue.toLowerCase()));
 
   return (
     <React.Fragment>
       <TodoCounter todoCompleted={todoCompleted} total={total} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TodoList>
-        {defaultTodos.map((el) => (
+        {searchedTodos.map((el) => (
           <TodoItem key={el.text} text={el.text} completed={el.completed} />
         ))}
       </TodoList>
