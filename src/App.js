@@ -22,29 +22,48 @@ const defaultTodos = [
 ];
 
 function App() {
+  let parsedTodos;
+  //persistencia con local storage
+  const localStorageTodos = localStorage.getItem("TODOS_V1");
+  //todos convertidos a json, es decir, array traidos de local storage
+
+  if (localStorageTodos) {
+    parsedTodos = JSON.parse(localStorageTodos);
+  } else {
+    localStorage.setItem("TODOS_V1", JSON.stringify([]));
+    parsedTodos = [];
+  }
+
   //creamos un estado para el buscador
   const [searchValue, setSearchValue] = React.useState("");
-  const [todos, setTodos] = React.useState(defaultTodos);
-
+  //todo variable parsedTodos, es el array que se actualiza de local storage
+  const [todos, setTodos] = React.useState(parsedTodos);
+  
   const todoCompleted = todos.filter((el) => el.completed).length;
   const total = todos.length;
   const searchedTodos = todos.filter((el) =>
-    el.text.toLowerCase().includes(searchValue.toLowerCase())
+  el.text.toLowerCase().includes(searchValue.toLowerCase())
   );
+  
+  //funcion para modificar el estado y el local storage, parametro=nuevo array a actualizar 
+  const saveTodos = (newTodos) => {
+    setTodos(newTodos);
+    localStorage.setItem("TODOS_V1",JSON.stringify(newTodos));
+  }
 
   //btn completar todo, el identificador key es text
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = todos.findIndex((el) => el.text === text);
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = todos.findIndex(el=>el.text===text);
-    newTodos.splice(todoIndex,1);
-    setTodos(newTodos);
+    const todoIndex = todos.findIndex((el) => el.text === text);
+    newTodos.splice(todoIndex, 1);
+    saveTodos(newTodos);
   };
 
   return (
