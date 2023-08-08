@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
@@ -21,35 +21,44 @@ const defaultTodos = [
   },
 ];
 
-function App() {
-  let parsedTodos;
+function useLocalStorage(itemName, initialValue) {
+  let parsedItem;
   //persistencia con local storage
-  const localStorageTodos = localStorage.getItem("TODOS_V1");
+  const localStorageItem = localStorage.getItem(itemName);
   //todos convertidos a json, es decir, array traidos de local storage
 
-  if (localStorageTodos) {
-    parsedTodos = JSON.parse(localStorageTodos);
+  if (localStorageItem) {
+    parsedItem = JSON.parse(localStorageItem);
   } else {
-    localStorage.setItem("TODOS_V1", JSON.stringify([]));
-    parsedTodos = [];
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   }
 
+  const [item, setItem] = useState(parsedItem);
+  //funcion para modificar el estado y el local storage, parametro=nuevo array a actualizar
+  const saveItem = (newItem) => {
+    setItem(newItem);
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+  };
+
+  return [item, saveItem];
+}
+
+function App() {
+  //todo variable parsedTodos, es el array que se actualiza de local storage
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1",[]);
+
+  //todo variable parsedTodos, es el array que se actualiza de local storage
+  // const [todos, setTodos] = React.useState(parsedTodos);
+  
   //creamos un estado para el buscador
   const [searchValue, setSearchValue] = React.useState("");
-  //todo variable parsedTodos, es el array que se actualiza de local storage
-  const [todos, setTodos] = React.useState(parsedTodos);
-  
+
   const todoCompleted = todos.filter((el) => el.completed).length;
   const total = todos.length;
   const searchedTodos = todos.filter((el) =>
-  el.text.toLowerCase().includes(searchValue.toLowerCase())
+    el.text.toLowerCase().includes(searchValue.toLowerCase())
   );
-  
-  //funcion para modificar el estado y el local storage, parametro=nuevo array a actualizar 
-  const saveTodos = (newTodos) => {
-    setTodos(newTodos);
-    localStorage.setItem("TODOS_V1",JSON.stringify(newTodos));
-  }
 
   //btn completar todo, el identificador key es text
   const completeTodo = (text) => {
