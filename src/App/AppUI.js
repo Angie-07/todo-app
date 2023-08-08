@@ -4,6 +4,7 @@ import { TodoSearch } from "../TodoSearch/index";
 import { TodoList } from "../TodoList/index";
 import { TodoItem } from "../TodoItem/index";
 import { CreateTodoButton } from "../CreateTodoButton/index";
+import { useLocalStorage } from "./useLocalStorage";
 
 // const defaultTodos = [
 //   {
@@ -20,36 +21,13 @@ import { CreateTodoButton } from "../CreateTodoButton/index";
 //   },
 // ];
 
-function useLocalStorage(itemName, initialValue) {
-  let parsedItem;
-  //persistencia con local storage
-  const localStorageItem = localStorage.getItem(itemName);
-  //todos convertidos a json, es decir, array traidos de local storage
-
-  if (localStorageItem) {
-    parsedItem = JSON.parse(localStorageItem);
-  } else {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  }
-
-  const [item, setItem] = useState(parsedItem);
-  //funcion para modificar el estado y el local storage, parametro=nuevo array a actualizar
-  const saveItem = (newItem) => {
-    setItem(newItem);
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-  };
-
-  return [item, saveItem];
-}
-
 function App() {
   //todo variable parsedTodos, es el array que se actualiza de local storage
-  const [todos, saveTodos] = useLocalStorage("TODOS_V1",[]);
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
 
   //todo variable parsedTodos, es el array que se actualiza de local storage
   // const [todos, setTodos] = React.useState(parsedTodos);
-  
+
   //creamos un estado para el buscador
   const [searchValue, setSearchValue] = React.useState("");
 
