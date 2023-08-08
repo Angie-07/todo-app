@@ -1,25 +1,24 @@
-import "./App.css";
 import React, { useState } from "react";
-import { TodoCounter } from "./TodoCounter";
-import { TodoSearch } from "./TodoSearch";
-import { TodoList } from "./TodoList";
-import { TodoItem } from "./TodoItem";
-import { CreateTodoButton } from "./CreateTodoButton";
+import { TodoCounter } from "../TodoCounter/index";
+import { TodoSearch } from "../TodoSearch/index";
+import { TodoList } from "../TodoList/index";
+import { TodoItem } from "../TodoItem/index";
+import { CreateTodoButton } from "../CreateTodoButton/index";
 
-const defaultTodos = [
-  {
-    text: "Learn react to develop",
-    completed: true,
-  },
-  {
-    text: "Go to the gym",
-    completed: false,
-  },
-  {
-    text: "Clean my house",
-    completed: false,
-  },
-];
+// const defaultTodos = [
+//   {
+//     text: "Learn react to develop",
+//     completed: true,
+//   },
+//   {
+//     text: "Go to the gym",
+//     completed: false,
+//   },
+//   {
+//     text: "Clean my house",
+//     completed: false,
+//   },
+// ];
 
 function useLocalStorage(itemName, initialValue) {
   let parsedItem;
