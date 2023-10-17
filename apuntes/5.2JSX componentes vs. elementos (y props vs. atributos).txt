@@ -1,0 +1,109 @@
+JSX es una extensión de JavaScript creada por Facebook para usarse con React.js. Nos presenta muchas ventajas el trabajar con elementos y componentes muy similar a la sintaxis de HTML.
+
+La función que JSX tiene es de ser un preprocesador y transformar el código a JavaScript.
+
+💡 JSX es solamente azúcar sintáctica para el método React.createElement(component, props, ...children) de React.
+
+Nota: dentro del código encontrarás comentarios que explicarán que es lo que se está añadiendo o algunos consejos.
+
+****************************
+¿CÓMO CREAR UN COMPONENTE?
+Existen varias formas de crear un componente en React, por convención siempre los creamos utilizando PascalCase (La primera letra de cada palabra en mayúscula y juntas).
+
+1.Crear un componente con clases
+Este es el modo que se empleaba antes, ahora ya casi nadie la utiliza, pero es bueno saber cómo funciona, por si llegamos a trabajar con proyectos que las usen, con el método render podemos renderizar el JSX que retorna nuestra clase.
+
+class Componente extends React.Component {
+	render() {
+		return (
+		    // JSX
+		)
+	}
+} 
+Podemos agregar JSX entre los paréntesis del return.
+
+2.Crear un componente con funciones
+Los componentes funcionales son los más utilizados hoy en día, ya que nos permiten controlar el ciclo de vida mucho más fácil con los hooks de React:
+function Component() {
+    return (
+        // JSX
+    )
+} 
+
+// Utilizando arrow function
+const Component = () => {
+    return(
+        // JSX
+    )
+}
+
+COMPONENTES VS ELEMENTOS
+Los componentes son invisibles para HTML, pero no para React, de hecho React utiliza los componentes para renderizar, y optimizar los re-renderizados.
+
+1.Componente
+Un componente es una pieza de código que describe una parte reutilizable de la interfaz, recibe propiedades y retornan elementos, dentro de los componentes podemos utilizar variables de JavaScript con ayuda de las llaves {}.
+const Component = () => {
+    const titulo = Soy un título;
+    
+    return(
+        <h1>{titulo}h1>
+    )
+}
+
+2.Elemento
+Un elemento es lo que devuelve un componente, es una representación de un nodo en el DOM.
+<h1>Soy un títuloh1>
+
+PROPIEDADES VS ATRIBUTOS
+La diferencia principal es que un atributo no se puede modificar y una propiedad si, ya que los atributos son de HTML y las propiedades son de JavaScript.
+
+1.Atributo
+Los atributos los pueden tener las etiquetas de HTML.
+<h1 class="titulo">Soy un títuloh1>
+
+2.Propiedad
+Las propiedades las pueden recibir los elementos y componentes en React.
+const Component = () => {
+    return(
+        <h1 className="titulo">
+            Soy un titulo
+        h1>
+    )
+}
+
+Es importante notar que algunos atributos de HTML se escriben diferente como propiedades, por ejemplo; el atributo class de HTML no se debe utilizar como propiedad de una clase o elemento de React, ya que class es una palabra reservada para crear clases en JavaScript, en su lugar utilizamos className.
+
+PASANDO PROPIEDADES A NUESTROS COMPONENTES
+Algo mágico de React es que podemos pasarle propiedades a nuestros componentes.
+// Le pasamos la propiedad saludo
+"Oli" />
+
+// Recibimos las propiedades
+
+const Componente = (props) => {
+    return(
+        {/* ¡Así creamos un comentario en JSX! */}
+        {/* Accedemos a saludo desde las props */}
+        
+
+            {props.saludo} 
+            {/* props.salido = Oli */}
+        
+
+    )
+}
+
+
+PROPIEDAD CHILDREN
+También podemos utilizar los componentes de React como etiquetas abiertas, para pasarle contenido, elementos o incluso otros componentes, la manera de acceder a ellos es con la propiedad especial children.
+¡Soy un título anidado!
+
+const Componente = (props) => {
+    return(
+        <div className="titulo">
+            {props.children}
+            {/* props.children = <h1>¡Soy un título anidado!h1> */}
+        div>
+    )
+}
+

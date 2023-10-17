@@ -1,0 +1,140 @@
+useState-> pertenece a ReactHooks
+nos devuelve un array de 2 posiciones:
+-state
+-setState
+
+1
+# Completa el ejercicio aquí
+print(type("Hola Mundo" ))
+print(type([1, 10, 100]))
+print(type(-25))
+print(type(1.167))
+print(type(["Hola", "Mundo"]))
+print(type(' '))
+
+2
+# Completa el ejercicio aquí
+a = 10
+print('a = '+ str(a))
+b = -5
+print('b = '+ str(b))
+c = "Hola "
+print('c = '+ c)
+d = [1, 2, 3]
+print('d = '+ str(d))
+print('a * 5 = '+ str(a*5))
+print('a - b = ' + str(a-b))
+print('c + "Mundo" = ' + c + "Mundo") 
+print('c * 2 = ' + c * 2) 
+print('c[-1] = ' + str(c[-1]))
+print('c[1:] = '+ c[1:])    
+print('d + d = ' + str(d+d)) 
+
+3
+numero_1 = 9
+numero_2 = 3
+numero_3 = 6
+
+#media = numero_1 + numero_2 + numero_3 / 3     
+#print("La nota media es", media)
+
+#el problema era que faltaban los parentesis, por ello sumaba los 2 primeros números con la tercera 
+#parte del tercer número
+#solucion:
+media = (numero_1 + numero_2 + numero_3) / 3     
+print("La nota media es", media)
+
+4
+nota_1 = 18
+nota_2 = 14
+nota_3 = 10
+
+# Completa el ejercicio aquí
+nota_promedio = (nota_1*0.15 + nota_2*0.35 + nota_3*0.5)
+print(nota_promedio)
+
+5
+# Completa el ejercicio aquí
+numero_1 = '1'*25
+numero_2 = '2'*25
+numero_3 = '3'*25
+suma = int(numero_1) + int(numero_2) + int(numero_3)
+print(suma)
+
+6
+# Completa el ejercicio aquí
+from datetime import datetime, date, time, timedelta
+import calendar
+segundos = input('Ingrese los segundos: ')
+timedelta(seconds=int(segundos))
+
+
+
+1
+# Completa el ejercicio aquí
+cadena1 = t[1:18] + t[22:47] + t[51:95]
+print(cadena1.lower())
+print('El largo de la cadena es: ' + str(len(cadena1)))
+
+2
+cadena = "zeréP epeP,81"
+# Completa el ejercicio aquí
+cadena_nueva = cadena[9::-1] + ' ha sacado un ' + cadena[:10:-1] + ' de nota.'
+print(cadena_nueva)
+
+3
+# Completa el ejercicio aquí
+letras = 'ABCDE'
+print(letras[::-1])
+
+4
+str_ex2="Curso_Py"
+str_ex2[str_ex2.index("_")+1:]  
+#Este codigo nos muestra  una parte de la cadena, tomando como inicio la posición donde esta ubicado 
+#el caracter '_' que es la posicion 5, añadiendole 1; y como fin, esta tomando hasta la última 
+#posición, ya que no especifica, por tanto se imprime 'Py'
+ 
+
+1
+# Completa el ejercicio aquí
+print('TRIÁNGULO')
+try:
+    lado1 = int(input('Ingrese lado 1 del triángulo: '))
+    lado2 = int(input('Ingrese lado 2 del triángulo: '))
+    lado3 = int(input('Ingrese lado 3 del triángulo: '))
+    if(lado1>0 and lado2>0 and lado3>0):
+        if(lado1 == lado2 and lado2 ==lado3):
+            print('El triángulo es quilátero')
+        elif(lado1 == lado2 or lado2 == lado3 or lado1 == lado3):
+            print('El triángulo es isósceles')
+        else:
+            print('El triángulo es escaleno')
+    else:
+        print('h')
+
+except:
+    print('Error: los lados deben ser números, positivos y no cero')
+
+2
+# Completa el ejercicio aquí
+carro = range(1,101)
+lista_carros = list(carro)
+suma = 0
+for x in lista_carros:
+    suma = suma + x
+print(suma)
+
+
+3
+# Completa el ejercicio aquí
+lista = range(1,101)
+lista_numeros = list(lista)
+suma_pares = 0
+suma_impares = 0
+for x in lista_numeros:
+    if(x%2 == 0):
+        suma_pares = suma_pares + x
+    else:
+        suma_impares = suma_impares + x
+print('La suma de números pares entre 1 y 100 es: '+str(suma_pares))
+print('La suma de números impares entre 1 y 100 es: ' + str(suma_impares))

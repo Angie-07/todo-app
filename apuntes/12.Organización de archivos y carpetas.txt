@@ -1,0 +1,20 @@
+└── src/
+    ├── assets/
+    │   ├── img/
+    │       └── foto.jpg
+    │   ├── fonts/
+    │       └──ubuntu.woff2
+    ├── components/
+    │   ├── CreateTodoButton/
+    │       ├── index.js
+    │       └── CreateTodoButton.css
+    │   ├── TodoCounter/
+    │   ├── TodoItem/
+    │   ├── TodoList/
+    │   ├── TodoSearch/
+    ├── context/
+    │   ├── TodoContext.js
+    ├── hooks/
+    │   ├── useLocalStorage.js
+    ├── utils/
+    │   ├── fetch.js

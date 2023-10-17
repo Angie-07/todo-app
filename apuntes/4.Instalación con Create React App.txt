@@ -1,0 +1,10 @@
+npx-> nos permite crear nuestras herramientas para ejecutarlas y luego borrarlas, eso nos permite que siempre tengamos la version actualizada de lo que queramos crear
+
+npx create-react-app miProyecto
+
+npm start -> ejecutar nuestro proyecto 
+
+en el package.json :
+name -> nombre de la carpeta donde cree mi proyecto
+dependencies
+react-scripts -> forma en la q react-create-app configuró nuestro proyecto sin necesidad que nosotros hagamos la configuracion manualmente.

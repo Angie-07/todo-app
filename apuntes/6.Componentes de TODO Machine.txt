@@ -1,0 +1,5 @@
+React.Fragment -> es una etiqueta ainvisible que nos brinda react porque solo  renderiza 1 etiqueta y no afecta nuestro css porque es invisible
+
+children -> define propiedad directa que es hija
+
+key-> identificador para cada elemento que un array

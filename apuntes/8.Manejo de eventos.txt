@@ -1,0 +1,7 @@
+*cuando la funcion no necesita parametros, se puede enviar:
+NOMBRE DE LA FUNCION
+
+*cuando la funcion necesita parametros para funcionar 
+PARENTESIS+FUNCION = ARROW FUNCTION ()=>myFunction{
+
+}

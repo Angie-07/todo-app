@@ -1,0 +1,31 @@
+Componentes 
+-inician con mayuscula
+ESTO->
+function App(){
+	return(
+		React.createElement('h1', {id:"title"}, 'hola')
+	)
+}
+ES LO MISMO QUE->
+function App(){
+	return(
+		<h1 id="title">
+		holi
+		</h1>
+	)
+}
+
+
+-----------------------
+SI USAMOS LLAVES{} EN NUESTRO App.js estamos insertando javascript(variables)
+----------------------------------
+PARA EVITAR CONFUSIONES CON class(clase) y className(propiedad)
+--------------------------------------
+LOS COMPONENTES SON INIVISBLES PARA HTML PERO SI SON VISIBLES PARA REACT
+-------------------------
+React renderiza los componentes
+-----------------------
+en App.js no son etiquetas html, sino elementos en codigo javascript gracias a babel
+usamos una sintaxis que es jsx para que con una sintaxis que parece html estamos escribiendo los elementos
+----------------------------------------------------
+los COMPONENTES tienen PROPS(PROPIEDADES) que pueden ser renderizadas en index.js pasandolas como argumentos en el componente, pero declarando el valor de esa propiedad en el renderizado de nuestro componente

@@ -1,0 +1,2 @@
+JSON.stringyfy()-> transforma objetos a string
+JSON.parse() -> transforma a objeto
